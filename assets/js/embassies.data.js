@@ -1,8 +1,6 @@
-window.$H0N3 = window.$H0N3 || {}
-
 (function(url) {
-  const img = new Image()
-  img.src = url
+  const img = new Image();
+  img.src = url;
   img.onload = () => {
     console.log('%c', [
       'font-size: 1px;',
@@ -10,10 +8,11 @@ window.$H0N3 = window.$H0N3 || {}
       'padding: ' + this.height * .5 + 'px ' + this.width * .5 + 'px;',
       'background-size: ' + this.width + 'px ' + this.height + 'px;',
       'background: url(' + url + ');'
-    ].join(' '))
-  }
-})('https://h0n3.eu/assets/img/logo.png')
+    ].join(' '));
+  };
+})('https://h0n3.eu/assets/img/logo.png');
 
+window.$H0N3 = window.$H0N3 || {};
 $H0N3.embassies = {
   Chartres: {
     long: 48.450001,
@@ -21,4 +20,4 @@ $H0N3.embassies = {
     email: 'chartres@amb.h0n3.eu',
     rep: 'One Type II de France',
   },
-}
+};
