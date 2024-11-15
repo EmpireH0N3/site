@@ -10,8 +10,33 @@ window.$H0N3 = window.$H0N3 || {};
 $H0N3.embassies = {
   Chartres: {
     ambassador: 'One Type II de France',
-    long: 48.450001,
-    lat: 1.5,
+    long: 1.4889035,
+    lat: 48.443911792,
+  },
+  Dráma: {
+    long: 24.1467915,
+    lat: 41.1500495,
+  },
+  Laâyoune: {
+    long: -13.18797,
+    lat: 27.1418,
+  },
+  Mons: {
+    long: 3.971947526,
+    lat: 50.452412336,
+  },
+  Palerme: {
+    ambassador: 'Micorksen I de Sicile',
+    long: 13.3614707,
+    lat: 38.115664,
+  },
+  Oran: {
+    long: -0.63588,
+    lat: 35.69906,
+  },
+  Strasbourg: {
+    long: 7.752005015,
+    lat: 48.573340291,
   },
 };
 
