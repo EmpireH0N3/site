@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#032A61" />
+    <meta name="description" content="La gloire ou la mort." />
+    <meta name="og:image" content="https://h0n3.eu/assets/img/logo.png" />
+    
+    <title>Carte des ambassades・Empire H0N3</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="icon" type="image/png" href="https://h0n3.eu/assets/img/logo.png" />
+    <style>body{margin:0} #map{height:100vh}</style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://h0n3.eu/assets/js/embassies.data.js"></script>
+    <script>
+      window.onload = () => {
+        const map = L.map('map').setView([$H0N3.embassies.Chartres.long, $H0N3.embassies.Chartres.lat], 11);
+        L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+          attribution: 'données © <a href="https://osm.org/copyright">OpenStreetMap</a>・Infratique',
+          minZoom: 1,
+          maxZoom: 20
+        }).addTo(map);
+
+        for (const embassyName in $H0N3.embassies) {
+          const embassy = $H0N3.embassies[embassyName];
+          let marker = L.marker([embassy.long, embassy.lat]).addTo(map);
+          marker.bindPopup(`Ambassade impériale à ${embassyName}<br /><b>Ambassadeur :</b> ${embassy.ambassador}<b>E-mail :</b> <a href="mailto:${embassy.email}">${embassy.email}</a>`);
+        }
+      }
+    </script>
+  </body>
+</html>
